@@ -11,13 +11,16 @@ flutter × firebaseで開発を行います。
 https://firebase.google.com/docs/flutter/setup?hl=ja&platform=ios
 こちらの公式ドキュメントに従って説明します。
 1. githubからリポジトリをクローンします。
-    git clone https://github.com/hasegawa282/Mottainai.git sc_ynu_v1
-    cd sc_ynu_v1
+    ```console
+        git clone https://github.com/hasegawa282/Mottainai.git sc_ynu_v1
+        cd sc_ynu_v1
+    ```
 
-1. flutter × firebase で開発を行う為、firebaseの登録を行なってください。
+#### flutter × firebase で開発を行う為、firebaseの登録を行なってください。
 
 以下のページから、個人のgoogleアカウントでログインして、Firebaseプロジェクトを作成してください。
-https://firebase.google.com/
+<br>
+(https://firebase.google.com/)
 
 1. アプリをFirebaseに登録してください。
     1. Firebaseコンソールの「プロジェクトの概要」ページの中央から開発したい端末(ios)をクリックして設定ワークフローを起動します。
@@ -30,15 +33,18 @@ https://firebase.google.com/
     1. ダウンロードしたGoogleService-Info.plistをisoであれば、ios/Runner/Runnerディレクトリに移動します。
         ※iosの場合は必ずXcodeを使用してください。androidの場合は、ワークフローに従ってください。
 
-1. firebase CLIインストール
-    https://firebase.google.com/docs/cli?hl=ja
+1. firebase CLIインストール 
+    <br>
+    (https://firebase.google.com/docs/cli?hl=ja)
+    <br>
     1. firebase CLIをインストールします
         以下どちらかのコマンドでインストールしてください。
+        <br>
         ※windowsはnpmの方のみ。macOSはどちらでもOK
+        <br>
         ```console
         curl -sL https://firebase.tools | bash
         npm install -g firebase-tools
-
         ```
     1. 各自のGoogleアカウントでfirebaseにログインする。
         ```console
@@ -48,17 +54,20 @@ https://firebase.google.com/
         ```console
         firebase projects:list
         ```
+        <br>
         うまくいけばfirebaseコンソールと同じFirebaseプロジェクトが表示されるはず。
 
 1. flutterfire CLI インストール
-    https://firebase.flutter.dev/docs/overview/
+    <br>
+    (https://firebase.flutter.dev/docs/overview/)
+    <br>
     1. flutterfire cliをインストール
         ```console
         dart pub global activate flutterfire_cli
         ```
-
         #### うまくいかない場合
         メッセージにパスの通し方が表示されると思いますので、それに従ってパスを通してください。
+        <br>
         下はmacOSのzshを使用している場合です。
         ```console
         export PATH="$PATH":"$HOME/.pub-cache/bin"
@@ -72,6 +81,7 @@ https://firebase.google.com/
         flutterfire configure
         ```
         多分文章通りに進めていけばできると思います。
+        <br>
         ※windowsの場合は、macOS, iosのチェックを外してください(おそらく対応できずエラーが起きるので)
 
 上記の操作で必要なインストールは完了します。以下では実際にローカル立ち上げを行います。
@@ -97,17 +107,23 @@ https://firebase.google.com/
         flutter pub add <ライブラリ名>
     ```
  - yummly2のレシピを表示したい場合
+    <br>
     ホーム画面でサンプルレシピが表示されますが、これを行うためにはRakuten Rapid APIのyummly2のapi keyを取得する必要があります。
-    https://api.rakuten.net/apidojo/api/yummly2/pricing
+    <br>
+    (https://api.rakuten.net/apidojo/api/yummly2/pricing)
 
     取得したapi keyを環境変数に指定することで使用できます。
+    <br>
     仮にapi key = '123456'だとすると
+    <br>
     ```console
         flutter run --dart-define=YUMMY_API_KEY='123456'
     ```
     として立ち上げてください。
+    <br>
     YUMMY_API_KEYという名前を環境変数としています。
 
 ## 開発の進め方
  githubでそれぞれ、新しいブランチを切ってください。
+ <br>
  タスクが完了したら、新しいブランチでgit pushを行い、developブランチにプルリクエストをしてください。
